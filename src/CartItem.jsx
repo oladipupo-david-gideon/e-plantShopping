@@ -45,7 +45,7 @@ const CartItem = ({ onContinueShopping }) => {
     return item.quantity * parseFloat(item.cost.substring(1));
   };
   const calculateTotalQuantity = () => {
-    return cart ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+    return cart ? cart.reduce((total, item) => total + item.quantity, 0) : 0;
   };
 
   return (
