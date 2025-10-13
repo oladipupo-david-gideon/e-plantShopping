@@ -45,8 +45,18 @@
   object-fit: cover;
 }
 
+/* **NEW**: Wrapper for the clickable area */
+.product-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* **MODIFIED**: Adjust padding to remove bottom space */
 .product-details {
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -72,6 +82,11 @@
   margin-bottom: 1rem;
 }
 
+/* **NEW**: Container for the button to keep it separate from the link */
+.product-button-container {
+    padding: 0 1rem 1rem 1rem;
+}
+
 .product-button {
   width: 100%;
   padding: 0.75rem;
@@ -92,6 +107,12 @@
 .product-button:disabled {
   background-color: #999;
   cursor: not-allowed;
+}
+
+.status-message {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 600px) {
