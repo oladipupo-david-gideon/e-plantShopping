@@ -2,9 +2,8 @@
 
 Welcome to Paradise Nursery, a modern and responsive e-commerce application built with React, Vite, and Redux. This project connects to a custom-built Node.js API to provide a dynamic catalog of plants, allowing users to manage a shopping cart in a clean, user-friendly interface.
 
-**➡️ Primary Live Demo (Netlify):** [https://your-netlify-site-name.netlify.app/](https://your-netlify-site-name.netlify.app/)
-**➡️ Secondary Live Demo (GitHub Pages):** [https://your-github-username.github.io/e-plantShopping/](https://your-github-username.github.io/e-plantShopping/)
-
+**➡️ Primary Live Demo (Netlify):** [https://react-plant-shopping.netlify.app/]
+**➡️ Secondary Live Demo (GitHub Pages):** [https://oladipupo-david-gideon.github.io/e-plantShopping/]
 
 ---
 
