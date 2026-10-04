@@ -12,9 +12,10 @@ This repo started as an IBM course starter project (forked from [ibm-developer-s
 
 ## Features
 
-* Product catalog loaded from a custom Node.js/Express API
-* Shopping cart managed with Redux Toolkit
-* Client-side routing with React Router v6, so navigation doesn't reload the page
+* Catalog of 26 plants across 5 categories (air purifying, aromatic, insect repellent, medicinal, and low maintenance), loaded from a custom Node.js/Express API with `createAsyncThunk`, including loading and error states
+* Product detail pages through a dynamic route (`/products/:productId`)
+* Shopping cart managed with Redux Toolkit: add items (repeat adds increase the quantity), remove items, and update quantities
+* Client-side routing with React Router v6 for the home, product list, product detail, and cart pages, so navigation doesn't reload the page
 * Responsive layout
 
 ## Tech Stack
@@ -23,7 +24,7 @@ This repo started as an IBM course starter project (forked from [ibm-developer-s
 * **Backend:** Node.js, Express.js (separate repo: [e-plant-api](https://github.com/oladipupo-david-gideon/e-plant-api))
 * **State management:** Redux Toolkit (`createSlice`, `createAsyncThunk`)
 * **Build tool:** Vite
-* **Testing:** Jest and React Testing Library
+* **Testing:** Jest and React Testing Library (one component test, `AboutUs.test.jsx`)
 * **Styling:** CSS with CSS variables
 
 ## Run Locally
@@ -48,15 +49,27 @@ In a new terminal:
 ```bash
 git clone https://github.com/oladipupo-david-gideon/e-plantShopping.git
 cd e-plantShopping
-npm install
-npm run dev
 ```
 
-The app runs at `http://localhost:5173`. If it can't reach the API, create a `.env` file in the project root containing:
+Create a `.env` file in the project root containing the API address. This is required, because the app has no default API URL:
 
 ```
 VITE_API_BASE_URL=http://localhost:4000
 ```
+
+Then install and start the app:
+
+```bash
+npm install
+npm run dev
+```
+
+The app runs at `http://localhost:5173`.
+
+## Known Limitations
+
+* The frontend needs the API running to show any products. Without it, the product list fails to load.
+* There is only one automated test, a component test for the About Us component.
 
 ## Available Scripts
 
