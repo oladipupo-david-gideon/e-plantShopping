@@ -1,98 +1,75 @@
-# Paradise Nursery - E-Commerce Plant Shop 🌿
+# Paradise Nursery - E-Commerce Plant Shop
 
-Welcome to Paradise Nursery, a modern and responsive e-commerce application built with React, Vite, and Redux. This project connects to a custom-built Node.js API to provide a dynamic catalog of plants, allowing users to manage a shopping cart in a clean, user-friendly interface.
+A responsive single-page shopping app for a fictional plant store, built with React, Vite, and Redux Toolkit. It loads its product catalog from a custom Node.js/Express API (separate repo) and lets users manage a shopping cart.
 
-**➡️ Primary Live Demo (Netlify):** [https://react-plant-shopping.netlify.app/]
-**➡️ Secondary Live Demo (GitHub Pages):** [https://oladipupo-david-gideon.github.io/e-plantShopping/]
+> **Status:** The live demos (Netlify and GitHub Pages) and the Render-hosted API have been taken down, so this repo is kept as a code sample. To see it running, follow the local setup below.
 
----
+## About this project
 
-## Project Overview
+This repo started as an IBM course starter project (forked from [ibm-developer-skills-network/e-plantShopping](https://github.com/ibm-developer-skills-network/e-plantShopping)). I reworked it with AI assistance into a full-stack app with a custom backend API, based on how I thought an online store should work and feel for users.
 
-This project demonstrates a full-featured e-commerce flow, from fetching and displaying products from a custom backend API to advanced shopping cart management. The application is built with a modern tech stack and follows best practices for state management, asynchronous operations, and component-based architecture.
+**How it was built:** I led the product and user-experience decisions and used AI coding assistance to write much of the code, then reviewed and tested the result.
 
+## Features
 
-
----
+* Product catalog loaded from a custom Node.js/Express API
+* Shopping cart managed with Redux Toolkit
+* Client-side routing with React Router v6, so navigation doesn't reload the page
+* Responsive layout
 
 ## Tech Stack
 
-* **Frontend**: React 18, React Router v6
-* **Backend**: Node.js, Express.js
-* **State Management**: Redux Toolkit (`createSlice`, `createAsyncThunk`)
-* **Build Tool**: Vite
-* **Testing**: Jest & React Testing Library
-* **Styling**: CSS with CSS Variables
+* **Frontend:** React 18, React Router v6
+* **Backend:** Node.js, Express.js (separate repo: [e-plant-api](https://github.com/oladipupo-david-gideon/e-plant-api))
+* **State management:** Redux Toolkit (`createSlice`, `createAsyncThunk`)
+* **Build tool:** Vite
+* **Testing:** Jest and React Testing Library
+* **Styling:** CSS with CSS variables
 
----
+## Run Locally
 
-## Local Setup and Installation
+You need [Node.js](https://nodejs.org/) (LTS version). Run the API and the frontend in two separate terminals.
 
-To run this project locally, you need to run **both** the backend API server and the frontend React application in separate terminals.
+### 1. Start the API
 
-### 1. Backend Server Setup
+```bash
+git clone https://github.com/oladipupo-david-gideon/e-plant-api.git
+cd e-plant-api
+npm install
+npm start
+```
 
-First, get the API server running.
+The API runs at `http://localhost:4000`. Leave this terminal open.
 
-1.  **Navigate to the GitHub directory:**
-    api-server GitHub link: https://github.com/oladipupo-david-gideon/e-plant-api.git
+### 2. Start the frontend
 
-    ```bash
-    cd ../api-server
-    ```
-2.  **Navigate to the API directory:**
-    ```bash
-    cd ../api-server
-    ```
+In a new terminal:
 
-3.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+```bash
+git clone https://github.com/oladipupo-david-gideon/e-plantShopping.git
+cd e-plantShopping
+npm install
+npm run dev
+```
 
-4.  **Start the API server:**
-    ```bash
-    npm start
-    ```
-    The API will now be running at `http://localhost:4000`. Leave this terminal running.
+The app runs at `http://localhost:5173`. If it can't reach the API, create a `.env` file in the project root containing:
 
-### 2. Frontend App Setup
-
-Now, in a **new terminal**, run the React application.
-
-1.  **Navigate to the project directory:**
-    ```bash
-    cd ../e-plantShopping
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Start the development server:**
-    ```bash
-    npm run dev
-    ```
-    The application will now be available at `http://localhost:5173` and will be able to communicate with your local API server.
-
----
-
-## Deployment
-
-This project uses a dual-deployment strategy:
-
-* **Backend (`api-server`)**: Deployed as a Web Service on **Render**.
-* **Frontend (`e-plantShopping`)**: Deployed as a static site on **Netlify** and **GitHub Pages**.
-
-The `VITE_API_BASE_URL` environment variable in the frontend project is used to point to the correct API URL (either `http://localhost:4000` for local development or the public Render URL for the live deployments).
-
----
+```
+VITE_API_BASE_URL=http://localhost:4000
+```
 
 ## Available Scripts
 
-* **`npm run dev`**: Runs the app in development mode.
-* **`npm run build`**: Builds the app for a production deployment at the root (for Netlify).
-* **`npm run test`**: Runs the test suite.
-* **`npm run preview`**: Previews the production build for Netlify locally.
-* **`npm run deploy`**: Deploys the production build to GitHub Pages.
+* `npm run dev` - run the app in development mode
+* `npm run build` - build for production
+* `npm run preview` - preview the production build locally
+* `npm run test` - run the test suite
+* `npm run deploy` - deploy the production build to GitHub Pages (the GitHub Pages demo has been retired)
+
+## Deployment History
+
+The frontend was previously hosted on Netlify and GitHub Pages, and the API on Render. All three have been taken offline. The frontend used the `VITE_API_BASE_URL` environment variable to point to the API.
+
+## Credits
+
+Based on an IBM course starter project, [ibm-developer-skills-network/e-plantShopping](https://github.com/ibm-developer-skills-network/e-plantShopping).
